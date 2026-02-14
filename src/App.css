@@ -1,0 +1,113 @@
+/* --- Reset básico --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+/* --- Layout del Home --- */
+.home-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; /* Espacio para que el header no tape el contenido */
+  padding-bottom: 40px;
+  
+  /* FONDO DE PANTALLA */
+  /* Pon tu imagen de fondo en public/background.jpg */
+  background-image: url('/background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Efecto Parallax simple */
+}
+
+/* --- Header --- */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+  backdrop-filter: blur(10px); /* Efecto borroso tipo iOS/Windows 11 */
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo-link {
+  display: block;
+  height: 50px; /* Ajusta esto según el tamaño de tu logo */
+}
+
+.header-logo {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+/* --- Grilla de Botones --- */
+.grid-container {
+  display: grid;
+  /* 2 columnas por defecto */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 30px; /* Espacio entre botones */
+  width: 90%;
+  max-width: 1200px; /* Ancho máximo para pantallas grandes */
+}
+
+/* --- Estilo de los Botones (Proporción Mágica) --- */
+.nav-button {
+  display: block;
+  width: 100%;
+  /* Aquí está la proporción exacta que pediste: 1508 / 670 */
+  aspect-ratio: 1508 / 670; 
+  border-radius: 16px;
+  overflow: hidden; /* Para recortar la imagen si se pasa */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  background-color: #2a2a2a; /* Color de fondo por si la imagen tarda en cargar */
+}
+
+/* Efecto Hover */
+.nav-button:hover {
+  transform: scale(1.03); /* Crece un poquito */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+.button-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cubre todo el botón sin deformarse */
+  display: block;
+}
+
+/* --- Páginas Interiores (Estilo básico) --- */
+.page-content {
+  padding-top: 100px;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* --- Responsive (Celulares) --- */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 sola columna en celular */
+    gap: 20px;
+  }
+  
+  .main-header {
+    padding: 0 20px;
+  }
+}
