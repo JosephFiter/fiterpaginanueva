@@ -3,7 +3,7 @@ import './App.css';
 import AppsJuegos from './pages/AppsJuegos';
 import ProjectDetail from './pages/ProjectDetail';
 import RewindPage from './pages/RewindPage';
-
+import HirePage from './pages/HirePage';
 // --- COMPONENTE DEL HEADER INTELIGENTE ---
 const FiterHeader = () => {
   const location = useLocation(); // Hook para saber dónde estamos
@@ -87,7 +87,6 @@ const Home = () => (
 
 // Páginas Placeholder
 const ModsPage = () => <div className="page-content"><h1>Mods</h1></div>;
-const HirePage = () => <div className="page-content"><h1>Contratame</h1></div>;
 
 // --- APP PRINCIPAL ---
 function App() {

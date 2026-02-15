@@ -576,3 +576,194 @@ body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+
+/* =========================================
+   ESTILOS DE LA PÁGINA CONTRATAME (HIRE)
+   ========================================= */
+
+.fiter-hire-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 120px 20px 60px; /* Padding top para que no tape el header */
+  background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* --- Header --- */
+.fiter-hire-header {
+  max-width: 800px;
+  margin-bottom: 60px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.fiter-hire-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #fff, #aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fiter-hire-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* --- Grid de Servicios --- */
+.fiter-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 80px;
+}
+
+.fiter-service-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.fiter-service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.fiter-service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.fiter-service-card p {
+  color: #aaa;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* --- CTA Portfolio --- */
+.fiter-portfolio-cta {
+  background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 80px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.fiter-portfolio-cta p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.fiter-cta-button {
+  background-color: white;
+  color: black;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fiter-cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* --- Contact Section --- */
+.fiter-contact-section {
+  width: 100%;
+  max-width: 600px;
+}
+
+.fiter-contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.fiter-contact-section p {
+  color: #888;
+  margin-bottom: 30px;
+}
+
+.email-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 25px;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.email-link {
+  color: #00ff88; /* Verde tecno */
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+.copy-btn {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+.copy-btn:hover {
+  background: #444;
+  border-color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fiter-hire-title {
+    font-size: 2.5rem;
+  }
+  .email-box {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .email-link {
+    font-size: 1rem;
+  }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

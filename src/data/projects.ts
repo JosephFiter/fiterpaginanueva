@@ -53,7 +53,22 @@ export const projectsData: Project[] = [
     links: {
       windows: 'https://www.mediafire.com/file/xb6ml0xoutp5n0h/donotenter.rar/file',
     }
-  }
+  },
+  {
+    id: 'quienesquien',
+    title: 'Quien es Quien',
+    shortDescription: 'El juego quien es quien es un juego de cartas donde el objetivo es adivinar el personaje del oponente haciendo preguntas sobre sus características.',
+    imageButton: 'botquien.png',
+    imageFondos: 'capquien2.png',
+    logo: 'logoquien.png',
+    gallery: ['captquien.png'],
+    links: {
+      web: 'https://quienesquienuniversal.vercel.app/',
+    }
+  },
+ 
+  
+
 
   
   
