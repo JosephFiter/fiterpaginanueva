@@ -1,18 +1,49 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import './App.css';
 import AppsJuegos from './pages/AppsJuegos';
-import ProjectDetail from './pages/ProjectDetail'; // <--- IMPORTANTE: Faltaba esto
+import ProjectDetail from './pages/ProjectDetail';
 
-// --- Definición de tipos para los botones ---
-interface NavButton {
-  id: string;
-  path: string;
-  imageName: string; 
-  alt: string;
-  isExternal?: boolean;
-}
+// --- COMPONENTE DEL HEADER INTELIGENTE ---
+// Lo creamos aquí mismo para que sea fácil de editar
+const FiterHeader = () => {
+  const location = useLocation(); // Hook para saber dónde estamos
+  const isHome = location.pathname === '/'; // ¿Estamos en el inicio?
 
-// --- Configuración de los botones ---
+  return (
+    <header className="fiter-header-wrapper">
+      {/* 1. LOGO (Siempre visible, lleva al Home) */}
+      <Link to="/" className="logo-link">
+        <img src="/logo.png" alt="Logo Fiter" className="fiter-header-logo-img" />
+      </Link>
+
+      {/* 2. BOTÓN ATRÁS (Solo visible si NO estamos en Home) */}
+      {!isHome && (
+        <Link to="/" className="fiter-header-back-button">
+          {/* Pone tu foto en public/images/btn-header-back.png */}
+          <img 
+            src="/images/botonVolver.png" 
+            alt="Volver" 
+            className="fiter-header-btn-img"
+            onError={(e) => {
+                // Si no hay foto, muestra un botón gris temporal
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.parentElement!.style.background = '#444';
+                e.currentTarget.parentElement!.innerText = 'Volver al Inicio';
+                e.currentTarget.parentElement!.style.color = 'white';
+                e.currentTarget.parentElement!.style.display = 'flex';
+                e.currentTarget.parentElement!.style.alignItems = 'center';
+                e.currentTarget.parentElement!.style.justifyContent = 'center';
+            }}
+          />
+        </Link>
+      )}
+    </header>
+  );
+};
+
+// --- Configuración de botones del Home ---
+interface NavButton { id: string; path: string; imageName: string; alt: string; isExternal?: boolean; }
+
 const buttons: NavButton[] = [
   { id: '1', path: '/apps-juegos', imageName: 'btn-apps.png', alt: 'Apps y Juegos' },
   { id: '2', path: 'https://www.youtube.com/@josephfiter5187', imageName: 'btn-youtube.png', alt: 'YouTube', isExternal: true },
@@ -45,29 +76,22 @@ const Home = () => (
   </div>
 );
 
+// Páginas Placeholder
 const ModsPage = () => <div className="page-content"><h1>Mods</h1></div>;
 const RewindPage = () => <div className="page-content"><h1>Rewind</h1></div>;
 const HirePage = () => <div className="page-content"><h1>Contratame</h1></div>;
 
+// --- APP PRINCIPAL ---
 function App() {
   return (
     <BrowserRouter>
-      <header className="main-header">
-        <Link to="/" className="logo-link">
-          <img src="/logo.png" alt="Logo Fiter" className="header-logo" />
-        </Link>
-      </header>
+      {/* Invocamos nuestro Header Inteligente DENTRO del Router */}
+      <FiterHeader />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        
-        {/* Ruta del menú de juegos */}
         <Route path="/apps-juegos" element={<AppsJuegos />} />
-
-        {/* --- RUTA QUE FALTABA --- */}
-        {/* Sin esto, el clic en el juego no lleva a ningún lado o da error */}
         <Route path="/project/:id" element={<ProjectDetail />} />
-        
         <Route path="/mods" element={<ModsPage />} />
         <Route path="/rewind" element={<RewindPage />} />
         <Route path="/contratame" element={<HirePage />} />

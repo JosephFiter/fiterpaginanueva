@@ -28,7 +28,33 @@ export const projectsData: Project[] = [
       windows: 'https://www.mediafire.com/file/zc2nla9cxm1ogyg/fiter.rar/file',
       android: 'https://www.mediafire.com/file/q5zluwfv6a7z7w2/fiter.rar/file',
     }
+  },
+  {
+    id: 'YEnElEntretiempo',
+    title: 'Y En El Entretiempo',
+    shortDescription: 'Descubre los misterios detrás de tu baneo en el servidor de Discord de z4 en "Y En El Entretiempo", la emocionante precuela de "Y En El Descuento".',
+    imageButton: 'abcdefgh.png',
+    imageFondos: 'fondoentre.png',
+    logo: 'logoentretiempo.png',
+    gallery: ['ciudades1.png', 'ciudades2jefesyenel.png'],
+    links: {
+      windows: 'https://www.mediafire.com/file/al35k7fj0f8f4xy/y+en+entretiempo.rar/file',
+      android: 'https://www.mediafire.com/file/wslyuf6ypij9f92/y+en+entretiempo+-+copia.rar/file',
+    }
+  },
+  {
+    id: 'donotenter',
+    title: 'Do Not Enter',
+    shortDescription: 'Un shooter en primera persona donde te enfrentaras a zombies, cocos y muñecos de madera en una isla embrujada.',
+    imageButton: 'donotboton.png',
+    imageFondos: 'donotfondo2.png',
+    logo: 'donotenterlogo.png',
+    gallery: ['donot.png', 'donotfondo.png'],
+    links: {
+      windows: 'https://www.mediafire.com/file/xb6ml0xoutp5n0h/donotenter.rar/file',
+    }
   }
+
   
   
 ];
