@@ -767,3 +767,166 @@ body {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* =========================================
+   ESTILOS DE LA PÁGINA DE MODS
+   ========================================= */
+
+/* --- 1. MENÚ DE MODS (LISTA) --- */
+.fiter-mods-main-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrado vertical */
+  padding-left: 10%;       /* Alineado a la izquierda como pediste */
+  padding-top: 80px;
+  background-image: url('/background.jpg'); /* O usa un fondo distinto si quieres */
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.fiter-mods-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  width: fit-content;
+}
+
+.fiter-mods-button {
+  display: block;
+  width: 230px;
+  height: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.2s;
+  background: #111;
+  text-decoration: none;
+}
+
+.fiter-mods-button:hover {
+  transform: translateX(10px);
+  border-color: #aaa;
+}
+
+.fiter-mods-btn-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fiter-mods-back-btn {
+  margin-top: 30px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 1px solid #444;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: fit-content;
+  background: rgba(0,0,0,0.5);
+}
+
+/* --- 2. DETALLE DEL MOD (PÁGINA INTERNA) --- */
+.fiter-mod-detail-container {
+  min-height: 100vh;
+  padding: 100px 20px 50px;
+  background: linear-gradient(to bottom, #1e1e1e, #000);
+  display: flex;
+  justify-content: center;
+}
+
+.fiter-mod-content-box {
+  background: rgba(30, 30, 30, 0.8);
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.fiter-mod-title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #00ff88; /* Detalle verde */
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+/* Caja de Instrucciones (Estilo Terminal) */
+.fiter-mod-instructions-box {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  margin-bottom: 30px;
+}
+
+.fiter-mod-instructions-box h3 {
+  color: #ddd;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.fiter-mod-instructions-text {
+  color: #00ff88; /* Texto verde terminal */
+  font-family: 'Courier New', monospace;
+  white-space: pre-line; /* IMPORTANTE: Respeta los saltos de línea del .ts */
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Botón de Descarga Grande */
+.fiter-mod-download-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: white;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  transition: transform 0.2s, background 0.2s;
+  margin-bottom: 40px;
+}
+
+.fiter-mod-download-btn:hover {
+  transform: scale(1.02);
+  background: #f0f0f0;
+}
+
+/* Galería */
+.fiter-mod-gallery h3 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.fiter-mod-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.fiter-mod-gallery-img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.fiter-mod-gallery-img:hover {
+  transform: scale(1.05);
+}
+
+.fiter-mod-back-link {
+  display: inline-block;
+  margin-top: 30px;
+  color: #888;
+  text-decoration: none;
+}
+.fiter-mod-back-link:hover { color: white; }

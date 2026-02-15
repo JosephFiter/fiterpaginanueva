@@ -1,14 +1,19 @@
 import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
+
+// --- IMPORTS DE TUS PÁGINAS ---
 import AppsJuegos from './pages/AppsJuegos';
 import ProjectDetail from './pages/ProjectDetail';
 import RewindPage from './pages/RewindPage';
 import HirePage from './pages/HirePage';
+import ModsPage from './pages/ModsPage';
+import ModDetail from './pages/ModDetail';
+
 // --- COMPONENTE DEL HEADER INTELIGENTE ---
 const FiterHeader = () => {
-  const location = useLocation(); // Hook para saber dónde estamos
-  const navigate = useNavigate(); // Hook para navegar en el historial (Atrás)
-  const isHome = location.pathname === '/'; // ¿Estamos en el inicio?
+  const location = useLocation(); 
+  const navigate = useNavigate(); 
+  const isHome = location.pathname === '/'; 
 
   return (
     <header className="fiter-header-wrapper">
@@ -20,9 +25,8 @@ const FiterHeader = () => {
       {/* 2. BOTÓN ATRÁS (Solo visible si NO estamos en Home) */}
       {!isHome && (
         <button 
-          onClick={() => navigate(-1)} // <--- Acción mágica para volver atrás
+          onClick={() => navigate(-1)} 
           className="fiter-header-back-button"
-          // Reseteo básico para que el botón se comporte como un div/link visualmente
           style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer' }}
         >
           <img 
@@ -30,16 +34,14 @@ const FiterHeader = () => {
             alt="Volver" 
             className="fiter-header-btn-img"
             onError={(e) => {
-                // Si no hay foto, muestra un botón gris temporal
                 e.currentTarget.style.display = 'none';
                 const parent = e.currentTarget.parentElement!;
                 parent.style.background = '#444';
-                parent.innerText = 'Volver'; // Texto más corto para que entre
+                parent.innerText = 'Volver'; 
                 parent.style.color = 'white';
                 parent.style.display = 'flex';
                 parent.style.alignItems = 'center';
                 parent.style.justifyContent = 'center';
-                // Forzamos dimensiones por si falla la imagen y el CSS no carga
                 parent.style.width = '230px'; 
                 parent.style.height = '50px';
             }}
@@ -50,11 +52,11 @@ const FiterHeader = () => {
   );
 };
 
-// --- Configuración de botones del Home ---
+// --- CONFIGURACIÓN DE BOTONES DEL HOME ---
 interface NavButton { id: string; path: string; imageName: string; alt: string; isExternal?: boolean; }
 
 const buttons: NavButton[] = [
-  { id: '1', path: '/project', imageName: 'btn-apps.png', alt: 'Apps y Juegos' },
+  { id: '1', path: '/apps-juegos', imageName: 'btn-apps.png', alt: 'Apps y Juegos' }, // Ruta corregida a /apps-juegos
   { id: '2', path: 'https://www.youtube.com/@josephfiter5187', imageName: 'btn-youtube.png', alt: 'YouTube', isExternal: true },
   { id: '3', path: '/mods', imageName: 'btn-mods.png', alt: 'Mods' },
   { id: '4', path: '/rewind', imageName: 'btn-rewind.png', alt: 'Rewind' },
@@ -62,7 +64,7 @@ const buttons: NavButton[] = [
   { id: '6', path: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', imageName: 'btn-more.png', alt: 'Más', isExternal: true },
 ];
 
-// --- Componente Home ---
+// --- COMPONENTE HOME ---
 const Home = () => (
   <div className="home-container">
     <div className="grid-container">
@@ -85,21 +87,27 @@ const Home = () => (
   </div>
 );
 
-// Páginas Placeholder
-const ModsPage = () => <div className="page-content"><h1>Mods</h1></div>;
-
 // --- APP PRINCIPAL ---
 function App() {
   return (
     <BrowserRouter>
-      {/* Invocamos nuestro Header Inteligente DENTRO del Router */}
+      {/* Header fijo */}
       <FiterHeader />
 
+      {/* Rutas */}
       <Routes>
+        {/* Home */}
         <Route path="/" element={<Home />} />
-        <Route path="/project" element={<AppsJuegos />} />
+
+        {/* Sección Apps y Juegos */}
+        <Route path="/apps-juegos" element={<AppsJuegos />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
-        <Route path="/mods" element={<ModsPage />} />
+
+        {/* Sección Mods (Corregida) */}
+        <Route path="/mods" element={<ModsPage />} />       {/* Menú de Mods */}
+        <Route path="/mod/:id" element={<ModDetail />} />   {/* Detalle de un Mod */}
+
+        {/* Otras Secciones */}
         <Route path="/rewind" element={<RewindPage />} />
         <Route path="/contratame" element={<HirePage />} />
       </Routes>
