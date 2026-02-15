@@ -246,3 +246,333 @@ body {
     height: 40px;
   }
 }
+
+
+
+/* --- ESTILOS DE DETALLE DE PROYECTO (BACKGROUND VERSION) --- */
+
+.fiter-detail-main-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* El Fondo Fijo */
+.fiter-detail-background {
+  position: fixed; /* Truco clave: Se queda quieto el fondo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3) blur(3px); /* Oscuro y borroso para que se lea el texto */
+  z-index: -1; /* Se va al fondo */
+}
+
+/* El Contenedor que scrollea */
+.fiter-detail-content-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px; /* Espacio para el header fijo */
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+/* Logo Hero */
+.fiter-detail-hero-logo {
+  width: 20%;
+  max-width: 500px; /* Tamaño máximo del logo */
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 40px;
+  filter: drop-shadow(0 0 30px rgba(0,0,0,0.8)); /* Resplandor */
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Tarjeta de Información (Efecto Vidrio) */
+.fiter-detail-info-card {
+  width: 90%;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.6); /* Negro semi-transparente */
+  backdrop-filter: blur(15px); /* Efecto Blur potente */
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.fiter-detail-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fiter-detail-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 40px;
+  white-space: pre-line;
+}
+
+.fiter-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Galería */
+.fiter-detail-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.fiter-detail-gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+  height: 200px;
+}
+
+.fiter-detail-gallery-item:hover {
+  transform: scale(1.03);
+  z-index: 10;
+}
+
+.fiter-detail-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Header Botón Atrás (Actualizado) --- */
+.fiter-header-back-button {
+  display: block;
+  width: 230px;
+  height: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  background-color: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s;
+  
+  /* PROPIEDADES NUEVAS PARA QUE EL BOTÓN NO PAREZCA UN BOTÓN DE WINDOWS 95 */
+  cursor: pointer;      /* Manito al pasar el mouse */
+  padding: 0;           /* Sin relleno interno */
+  outline: none;        /* Sin borde azul al hacer clic */
+  appearance: none;     /* Quita estilos nativos del navegador */
+}
+
+.fiter-header-back-button:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+}
+
+/* =========================================
+   ESTILOS DE LA PÁGINA REWIND (ENCRIPTADA)
+   ========================================= */
+
+/* --- Contenedor Principal (Fondo Misterioso) --- */
+.fiter-rewind-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; /* Espacio para el header */
+  
+  /* Fondo radial oscuro: Foco en el centro, negro en los bordes */
+  background: radial-gradient(circle at center, #2b2b2b 0%, #000000 100%);
+}
+
+/* --- Caja de Login (Efecto Vidrio) --- */
+.fiter-rewind-login-box {
+  background: rgba(20, 20, 20, 0.7); /* Muy oscuro y transparente */
+  backdrop-filter: blur(15px);       /* Desenfoque fuerte detrás */
+  padding: 50px 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+  text-align: center;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6); /* Sombra profunda */
+  
+  /* Animación de entrada suave */
+  animation: fiterFadeInUp 0.6s ease-out;
+}
+
+/* Icono del Candado */
+.fiter-rewind-lock-icon {
+  font-size: 4rem;
+  margin: 0 0 20px 0;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+  animation: fiterFloat 3s ease-in-out infinite;
+}
+
+/* Subtítulo "Top Secret" */
+.fiter-rewind-subtitle {
+  color: #aaa;
+  margin-bottom: 30px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* --- Input de Contraseña (Estilo Terminal) --- */
+.fiter-rewind-input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  background: #0a0a0a;
+  color: #00ff88; /* Texto verde hacker */
+  font-family: 'Courier New', monospace; /* Fuente tipo código */
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  outline: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Efecto al hacer clic en el input */
+.fiter-rewind-input:focus {
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+  background: #111;
+}
+
+.fiter-rewind-input::placeholder {
+  color: #555;
+  font-family: sans-serif;
+}
+
+/* --- Botón Principal (Desencriptar) --- */
+.fiter-rewind-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  background: white;
+  color: black;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fiter-rewind-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+}
+
+.fiter-rewind-btn:active {
+  transform: translateY(0);
+}
+
+/* --- Mensaje de Error (Rojo y vibrante) --- */
+.fiter-rewind-error {
+  color: #ff4d4d;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: rgba(255, 77, 77, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  animation: fiterShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* --- ESTADO DESBLOQUEADO (El Tesoro) --- */
+.fiter-rewind-content-box {
+  width: 90%;
+  max-width: 800px;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(20px);
+  padding: 60px;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 255, 136, 0.2); /* Borde verde sutil */
+  text-align: center;
+  box-shadow: 0 0 50px rgba(0, 255, 136, 0.1);
+  animation: fiterZoomIn 0.5s ease-out;
+}
+
+.fiter-rewind-content-box h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* El link secreto revelado */
+.fiter-rewind-secret-link-container {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 30px 0;
+  border: 1px dashed #444;
+  word-break: break-all; /* Para que el link no rompa la caja */
+}
+
+/* Botón Secundario (Bloquear) */
+.fiter-rewind-btn.secondary {
+  background: transparent;
+  border: 1px solid #555;
+  color: #aaa;
+  width: auto;
+  padding: 10px 40px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+.fiter-rewind-btn.secondary:hover {
+  border-color: white;
+  color: white;
+  background: rgba(255,255,255,0.05);
+}
+
+/* =========================================
+   ANIMACIONES PERSONALIZADAS
+   ========================================= */
+
+@keyframes fiterShake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+@keyframes fiterFadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fiterZoomIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fiterFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

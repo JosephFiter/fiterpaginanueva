@@ -1,12 +1,13 @@
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 import AppsJuegos from './pages/AppsJuegos';
 import ProjectDetail from './pages/ProjectDetail';
+import RewindPage from './pages/RewindPage';
 
 // --- COMPONENTE DEL HEADER INTELIGENTE ---
-// Lo creamos aquí mismo para que sea fácil de editar
 const FiterHeader = () => {
   const location = useLocation(); // Hook para saber dónde estamos
+  const navigate = useNavigate(); // Hook para navegar en el historial (Atrás)
   const isHome = location.pathname === '/'; // ¿Estamos en el inicio?
 
   return (
@@ -18,8 +19,12 @@ const FiterHeader = () => {
 
       {/* 2. BOTÓN ATRÁS (Solo visible si NO estamos en Home) */}
       {!isHome && (
-        <Link to="/" className="fiter-header-back-button">
-          {/* Pone tu foto en public/images/btn-header-back.png */}
+        <button 
+          onClick={() => navigate(-1)} // <--- Acción mágica para volver atrás
+          className="fiter-header-back-button"
+          // Reseteo básico para que el botón se comporte como un div/link visualmente
+          style={{ background: 'transparent', border: 'none', padding: 0, cursor: 'pointer' }}
+        >
           <img 
             src="/images/botonVolver.png" 
             alt="Volver" 
@@ -27,15 +32,19 @@ const FiterHeader = () => {
             onError={(e) => {
                 // Si no hay foto, muestra un botón gris temporal
                 e.currentTarget.style.display = 'none';
-                e.currentTarget.parentElement!.style.background = '#444';
-                e.currentTarget.parentElement!.innerText = 'Volver al Inicio';
-                e.currentTarget.parentElement!.style.color = 'white';
-                e.currentTarget.parentElement!.style.display = 'flex';
-                e.currentTarget.parentElement!.style.alignItems = 'center';
-                e.currentTarget.parentElement!.style.justifyContent = 'center';
+                const parent = e.currentTarget.parentElement!;
+                parent.style.background = '#444';
+                parent.innerText = 'Volver'; // Texto más corto para que entre
+                parent.style.color = 'white';
+                parent.style.display = 'flex';
+                parent.style.alignItems = 'center';
+                parent.style.justifyContent = 'center';
+                // Forzamos dimensiones por si falla la imagen y el CSS no carga
+                parent.style.width = '230px'; 
+                parent.style.height = '50px';
             }}
           />
-        </Link>
+        </button>
       )}
     </header>
   );
@@ -45,7 +54,7 @@ const FiterHeader = () => {
 interface NavButton { id: string; path: string; imageName: string; alt: string; isExternal?: boolean; }
 
 const buttons: NavButton[] = [
-  { id: '1', path: '/apps-juegos', imageName: 'btn-apps.png', alt: 'Apps y Juegos' },
+  { id: '1', path: '/project', imageName: 'btn-apps.png', alt: 'Apps y Juegos' },
   { id: '2', path: 'https://www.youtube.com/@josephfiter5187', imageName: 'btn-youtube.png', alt: 'YouTube', isExternal: true },
   { id: '3', path: '/mods', imageName: 'btn-mods.png', alt: 'Mods' },
   { id: '4', path: '/rewind', imageName: 'btn-rewind.png', alt: 'Rewind' },
@@ -78,7 +87,6 @@ const Home = () => (
 
 // Páginas Placeholder
 const ModsPage = () => <div className="page-content"><h1>Mods</h1></div>;
-const RewindPage = () => <div className="page-content"><h1>Rewind</h1></div>;
 const HirePage = () => <div className="page-content"><h1>Contratame</h1></div>;
 
 // --- APP PRINCIPAL ---
@@ -90,7 +98,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/apps-juegos" element={<AppsJuegos />} />
+        <Route path="/project" element={<AppsJuegos />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
         <Route path="/mods" element={<ModsPage />} />
         <Route path="/rewind" element={<RewindPage />} />
