@@ -1,0 +1,8 @@
+[
+null,
+{"id":1,"battlerName":"Actor1_3","characterIndex":2,"characterName":"Actor1","classId":1,"equips":[1,1,2,3,0],"faceIndex":2,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":30,"name":"JOSEPH FITER","nickname":"","note":"","profile":""},
+{"id":2,"battlerName":"Actor1_6","characterIndex":4,"characterName":"Actor1","classId":2,"equips":[2,1,2,3,0],"faceIndex":4,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":30,"name":"OLIBER","nickname":"","note":"","profile":""},
+{"id":3,"battlerName":"Actor2_5","characterIndex":4,"characterName":"Actor2","classId":3,"equips":[3,0,0,0,4],"faceIndex":4,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":30,"name":"SCROLL","nickname":"","note":"","profile":""},
+{"id":4,"battlerName":"Actor3_5","characterIndex":4,"characterName":"Actor3","classId":4,"equips":[4,0,0,1,0],"faceIndex":4,"faceName":"Actor3","traits":[],"initialLevel":1,"maxLevel":30,"name":"SHIBUR","nickname":"","note":"","profile":""},
+{"id":5,"battlerName":"Actor2_1","characterIndex":2,"characterName":"Actor3","classId":4,"equips":[4,0,0,3,0],"faceIndex":2,"faceName":"Actor3","traits":[],"initialLevel":1,"maxLevel":99,"name":"BEHREND","nickname":"","note":"","profile":""}
+]
