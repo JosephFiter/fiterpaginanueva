@@ -8,6 +8,7 @@ import RewindPage from './pages/RewindPage';
 import HirePage from './pages/HirePage';
 import ModsPage from './pages/ModsPage';
 import ModDetail from './pages/ModDetail';
+import RpgMakerGame from './pages/RpgMakerGame';
 
 // --- COMPONENTE DEL HEADER INTELIGENTE ---
 const FiterHeader = () => {
@@ -110,6 +111,9 @@ function App() {
         {/* Otras Secciones */}
         <Route path="/rewind" element={<RewindPage />} />
         <Route path="/contratame" element={<HirePage />} />
+
+        {/* RPG Maker */}
+        <Route path="/rpgmakergame" element={<RpgMakerGame />} />
       </Routes>
     </BrowserRouter>
   );
