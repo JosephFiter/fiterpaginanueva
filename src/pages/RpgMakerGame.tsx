@@ -1,4 +1,3 @@
-import React from 'react';
 import '../App.css'; // O un archivo CSS específico si prefieres
 
 const RpgMakerGame = () => {
