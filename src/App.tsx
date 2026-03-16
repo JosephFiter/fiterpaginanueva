@@ -9,6 +9,7 @@ import HirePage from './pages/HirePage';
 import ModsPage from './pages/ModsPage';
 import ModDetail from './pages/ModDetail';
 import RpgMakerGame from './pages/RpgMakerGame';
+import YEnElDescuentoJugar from './pages/YEnElDescuentoJugar';
 
 // --- COMPONENTE DEL HEADER INTELIGENTE ---
 const FiterHeader = () => {
@@ -113,7 +114,11 @@ function App() {
         <Route path="/contratame" element={<HirePage />} />
 
         {/* RPG Maker */}
+
+        <Route path="/YEnElDescuentoJugar" element={<YEnElDescuentoJugar />} />
+
         <Route path="/YEnElEntretiempoJugar" element={<RpgMakerGame />} />
+
       </Routes>
     </BrowserRouter>
   );
