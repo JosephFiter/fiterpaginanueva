@@ -1,9 +1,9 @@
-import '../App.css';
+import '../App.css'; // O un archivo CSS específico si prefieres
 
-const YEnElDescuentoJugar = () => {
+const RpgMakerGame = () => {
   return (
     <div className="page-container" style={{ textAlign: 'center', paddingTop: '80px', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h1 style={{ color: 'white', marginBottom: '20px' }}>Y en el descuento</h1>
+      <h1 style={{ color: 'white', marginBottom: '20px' }}>Y en el entretiempo</h1>
 
       {/* Contenedor del juego para que el iframe se vea bien */}
       <div style={{
@@ -17,8 +17,8 @@ const YEnElDescuentoJugar = () => {
         margin: '0 auto'
       }}>
         <iframe
-          src="/YEnElDescuentoJugar/index.html"
-          title="Y en el descuento"
+          src="/rpgmakergame/index.html"
+          title="Y en el entretiempo"
           width="100%"
           height="100%"
           style={{ border: 'none', display: 'block' }}
@@ -27,10 +27,10 @@ const YEnElDescuentoJugar = () => {
       </div>
 
       <p style={{ color: '#ccc', marginTop: '20px', fontSize: '0.9rem' }}>
-        Nota: Si el juego no carga, asegúrate de haber subido los archivos del juego a la carpeta <code>public/YEnElDescuentoJugar</code>.
+        Nota: Si el juego no carga, asegúrate de haber subido los archivos del juego a la carpeta <code>public/rpgmakergame</code>.
       </p>
     </div>
   );
 };
 
-export default YEnElDescuentoJugar;
+export default RpgMakerGame;

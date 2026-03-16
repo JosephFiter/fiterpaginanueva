@@ -9,7 +9,7 @@ import HirePage from './pages/HirePage';
 import ModsPage from './pages/ModsPage';
 import ModDetail from './pages/ModDetail';
 import RpgMakerGame from './pages/RpgMakerGame';
-import YEnElDescuentoJugar from './pages/YEnElDescuentoJugar';
+import YEnElDescuentoJugar from './pages/RpgMakerGamecopy';
 
 // --- COMPONENTE DEL HEADER INTELIGENTE ---
 const FiterHeader = () => {
