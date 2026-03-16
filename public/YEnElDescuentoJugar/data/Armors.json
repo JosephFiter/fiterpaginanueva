@@ -1,0 +1,12 @@
+[
+null,
+{"id":1,"atypeId":5,"description":"","etypeId":2,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":128,"name":"Escudo","note":"","params":[0,0,0,10,0,0,0,0],"price":5},
+{"id":2,"atypeId":1,"description":"","etypeId":3,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":130,"name":"Casco","note":"","params":[0,0,0,10,0,0,0,0],"price":5},
+{"id":3,"atypeId":1,"description":"","etypeId":4,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":135,"name":"Ropa","note":"","params":[0,0,0,10,0,0,0,0],"price":5},
+{"id":4,"atypeId":1,"description":"","etypeId":5,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":145,"name":"Anillo","note":"","params":[0,0,0,0,10,0,0,0],"price":300},
+{"id":5,"atypeId":1,"description":"","etypeId":2,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":294,"name":"ESCUDO NASI","note":"","params":[0,0,0,15,0,0,0,0],"price":8},
+{"id":6,"atypeId":1,"description":"","etypeId":2,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":129,"name":"ESCUDO GOOOOOOOOOD","note":"","params":[0,0,0,25,0,10,0,0],"price":25},
+{"id":7,"atypeId":1,"description":"","etypeId":4,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":75,"name":"ROPA POSTA","note":"","params":[0,0,0,27,0,21,0,0],"price":35},
+{"id":8,"atypeId":1,"description":"","etypeId":3,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":19,"name":"casco god","note":"","params":[0,0,0,25,0,0,0,0],"price":25},
+{"id":9,"atypeId":2,"description":"","etypeId":5,"traits":[{"code":22,"dataId":1,"value":0}],"iconIndex":145,"name":"ANILLO GOD","note":"","params":[0,0,0,15,30,20,0,0],"price":20}
+]
