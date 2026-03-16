@@ -17,7 +17,7 @@ const RpgMakerGame = () => {
         margin: '0 auto'
       }}>
         <iframe
-          src="/YEnElDescuento/index.html"
+          src="/YEnElDescuentoJugar/index.html"
           title="Y en el entretiempo"
           width="100%"
           height="100%"
