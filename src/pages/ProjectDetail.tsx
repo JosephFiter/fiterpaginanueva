@@ -1,4 +1,4 @@
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, Navigate, Link } from 'react-router-dom';
 import { projectsData } from '../data/projects';
 import '../App.css'; 
 
@@ -57,10 +57,10 @@ const ProjectDetail = () => {
             )}
 
             {project.links?.web && (
-              <a href={project.links.web} target="_blank" rel="noopener noreferrer" className="download-btn web">
+              <Link to={project.links.web} className="download-btn web">
                 <span style={{ fontSize: '1.5rem', marginRight: '10px' }}>🌐</span> 
                 Jugar Online
-              </a>
+              </Link>
             )}
           </div>
         </div>
