@@ -114,8 +114,11 @@ function App() {
         <Route path="/contratame" element={<HirePage />} />
 
         {/* RPG Maker */}
-        <Route path="/rpgmakergame" element={<RpgMakerGame />} />
+
         <Route path="/YEnElDescuentoJugar" element={<YEnElDescuentoJugar />} />
+
+        <Route path="/YEnElEntretiempoJugar" element={<RpgMakerGame />} />
+
       </Routes>
     </BrowserRouter>
   );

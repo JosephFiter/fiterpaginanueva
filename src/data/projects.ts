@@ -40,6 +40,7 @@ export const projectsData: Project[] = [
     links: {
       windows: 'https://www.mediafire.com/file/al35k7fj0f8f4xy/y+en+entretiempo.rar/file',
       android: 'https://www.mediafire.com/file/wslyuf6ypij9f92/y+en+entretiempo+-+copia.rar/file',
+      web: 'https://fiterpaginanueva.vercel.app/YEnElEntretiempoJugar',
     }
   },
   {
