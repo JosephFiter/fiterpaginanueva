@@ -115,9 +115,9 @@ function App() {
 
         {/* RPG Maker */}
 
-        <Route path="/YEnElDescuentoJugara" element={<RpgMakerGame2 />} />
+        <Route path="/YEnElDescuento-jugar" element={<RpgMakerGame2 />} />
 
-        <Route path="/YEnElEntretiempoJugar" element={<RpgMakerGame />} />
+        <Route path="/YEnElEntretiempo-jugar" element={<RpgMakerGame />} />
 
       </Routes>
     </BrowserRouter>

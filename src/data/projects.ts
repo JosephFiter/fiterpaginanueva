@@ -27,6 +27,8 @@ export const projectsData: Project[] = [
     links: {
       windows: 'https://www.mediafire.com/file/zc2nla9cxm1ogyg/fiter.rar/file',
       android: 'https://www.mediafire.com/file/q5zluwfv6a7z7w2/fiter.rar/file',
+      web: 'https://fiterpaginanueva.vercel.app/YEnElDescuento-jugar',
+
     }
   },
   {
@@ -40,7 +42,7 @@ export const projectsData: Project[] = [
     links: {
       windows: 'https://www.mediafire.com/file/al35k7fj0f8f4xy/y+en+entretiempo.rar/file',
       android: 'https://www.mediafire.com/file/wslyuf6ypij9f92/y+en+entretiempo+-+copia.rar/file',
-      web: 'https://fiterpaginanueva.vercel.app/YEnElEntretiempoJugar',
+      web: 'https://fiterpaginanueva.vercel.app/YEnElEntretiempo-jugar',
     }
   },
   {
